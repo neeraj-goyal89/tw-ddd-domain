@@ -1,19 +1,23 @@
+using System;
 using System.Collections.Generic;
 
 namespace tw_ddd.tw.ddd.domain
 {
     public class Cart
     {
+        public string CartId { get; }
         private readonly List<CartItem> _cartItemList;
-        private readonly List<Product> _deletedProductList = new List<Product>();
+        private readonly List<CartEvent> _cartEventList = new List<CartEvent>();
 
         public Cart()
         {
             _cartItemList = new List<CartItem>();
+            CartId = Guid.NewGuid().ToString();
         }
 
         public void AddProduct(Product product, int quantity = 1)
         {
+            _cartEventList.Add(new CartItemAddedEvent(product.GetName(), quantity));
             _cartItemList.Add(new CartItem(product, quantity));
         }
         
@@ -22,12 +26,12 @@ namespace tw_ddd.tw.ddd.domain
             var cartItemToRemove = FindItem(product);
             if (cartItemToRemove == null) 
                 return false;
-            
-            _deletedProductList.Add(cartItemToRemove.GetProduct());
+         
+            _cartEventList.Add(new CartItemRemovedEvent(product.GetName()));
             _cartItemList.Remove(cartItemToRemove);
             return true;
-
         }
+        
         private CartItem FindItem(Product product)
         {
             foreach (var cartItem in _cartItemList)
@@ -35,8 +39,12 @@ namespace tw_ddd.tw.ddd.domain
                 if (cartItem.GetProduct().Equals(product))
                     return cartItem;
             }
-
             return null;
+        }
+
+        public List<CartEvent> GetCartEventList()
+        {
+            return _cartEventList;
         }
     }
 }
