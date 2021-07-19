@@ -9,11 +9,14 @@ namespace tw_ddd.tw.ddd.domain
         private string _name;
         
         public Price Price { get; }
+        
+        public int WeightInGms { get; }
 
-        public Product(string name, Price price)
+        public Product(string name, Price price, int weightInGms)
         {
             _name = name;
             Price = price;
+            WeightInGms = weightInGms;
         }
 
         public string GetName()
@@ -34,7 +37,7 @@ namespace tw_ddd.tw.ddd.domain
 
         public static Product Create(string name)
         {
-            return new Product(name, ProductPriceService.Instance.GetPrice(name));
+            return new Product(name, ProductPriceService.Instance.GetPrice(name), 1000);
         }
         public override int GetHashCode()
         {

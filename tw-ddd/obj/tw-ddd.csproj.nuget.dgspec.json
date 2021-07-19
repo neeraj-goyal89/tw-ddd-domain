@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/neeraj.goyal/Documents/Learning/tw-ddd-domain/tw-ddd/tw-ddd.csproj": {}
+  },
+  "projects": {
+    "/Users/neeraj.goyal/Documents/Learning/tw-ddd-domain/tw-ddd/tw-ddd.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/neeraj.goyal/Documents/Learning/tw-ddd-domain/tw-ddd/tw-ddd.csproj",
+        "projectName": "tw-ddd",
+        "projectPath": "/Users/neeraj.goyal/Documents/Learning/tw-ddd-domain/tw-ddd/tw-ddd.csproj",
+        "packagesPath": "/Users/neeraj.goyal/.nuget/packages/",
+        "outputPath": "/Users/neeraj.goyal/Documents/Learning/tw-ddd-domain/tw-ddd/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/neeraj.goyal/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.404/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

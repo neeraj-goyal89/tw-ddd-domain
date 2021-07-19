@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace tw_ddd.tw.ddd.domain
 {
@@ -46,5 +47,20 @@ namespace tw_ddd.tw.ddd.domain
         {
             return _cartEventList;
         }
+
+        public void Checkout()
+        {
+            RaiseEvent(new CartCheckedOutEvent(_cartItemList));
+        }
+        
+        private void RaiseEvent(CartCheckedOutEvent cartCheckedOutEvent)
+        {
+            Console.WriteLine(cartCheckedOutEvent.ToString());
+        }
     }
 }
+/*
+Order
+-> List of products & quantity
+-> Calculate Order price
+*/
